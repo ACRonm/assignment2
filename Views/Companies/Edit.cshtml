@@ -1,0 +1,63 @@
+﻿@model WDP2022A2Mac.Models.Company
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<section class="admin-s1 container">
+
+
+
+<div class="row container-fluid">
+    <h1 class="admin-head">Edit Company</h1>
+
+    <div class="col-12">
+        <hr />
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary" class="control-label"></label>
+                <textarea asp-for="Summary" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFilename" class="control-label"></label>
+                <input id="imageFilename" asp-for="ImageFilename" class="form-control" />
+                <span asp-validation-for="ImageFilename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Upload image file</label>
+                <input required id="fileUpload" type="file" name="file" class="form-control" value="images/@(Model.ImageFilename).jpg"/>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="AnchorLink" class="form-control" />
+                <span asp-validation-for="AnchorLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Like" class="form-control" />
+                <span asp-validation-for="Like" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                    <input type="hidden" class="form-check-input" asp-for="canIncreaseLike" /> 
+            </div>
+            <div>
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-light" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+        <hr/>
+    </div>
+</div>
+
+
+
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

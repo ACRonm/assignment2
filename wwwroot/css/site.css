@@ -1,0 +1,410 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&family=Niconne&family=Oxygen&family=Poppins:wght@400;700&display=swap');
+
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 120px;
+}
+
+.index-s1 {
+  background-image: url("../images/ai.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: fit-content;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  min-height: 60vw;
+}
+
+#index-blurb {
+  z-index: 2;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25%;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 15%;
+  color: #EEE6A0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.55em;
+  text-align: center;
+}
+
+.index-head {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: brown;
+  padding: 10% 5% 0% 5%;
+  text-align: center;
+  font-size: 6em;
+}
+
+#overlay {
+  z-index: 0;
+  background-color: rgba(1, 1, 1, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.index-s2 {
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 60vh;
+}
+
+.index-s2>header {
+  font-family: "Anton", sans-serif;
+  color: #f8f6b0;
+  padding: 10% 5% 2% 5%;
+  text-align: center;
+  font-size: 5rem;
+  text-shadow: 4px 4px 2px navy, 4px 4px 8px white;
+}
+
+.admin-s1 {
+  background-image: url("../images/bg2.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+th {
+  text-align: center;
+  color: yellow;
+  background-color: #000080 !important;
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+  color: blue;
+  background-color: white !important;
+  border: 1px solid black;
+}
+
+
+.admin-head {
+  font-family: "Anton", sans-serif;
+  color: #f8f6b0;
+  padding: 10% 5% 2% 5%;
+  text-align: center;
+  font-size: 5rem;
+}
+
+hr {
+  margin-top: 1rem;
+  color: yellow;
+  opacity: 1;
+}
+
+label {
+  color: white;
+}
+
+input,
+textarea {
+  padding-bottom: 1erem;
+}
+
+dd,
+dt {
+  color: #f8f6b0;
+}
+
+dt {
+  text-shadow: 1px 1px black;
+  font-size: large;
+  letter-spacing: 1px;
+  font-family: Anton, sans-serif;
+}
+
+.form-group {
+  padding-bottom: 1rem;
+}
+
+.danger {
+  color: red;
+  font-size: 3rem;
+  text-shadow: 1px 1px #EEE6A0;
+}
+
+dl>p {
+  color: #f8f6b0;
+}
+
+.companyImage1>img,
+.companyImage2>img {
+  width: 100%;
+  height: auto;
+}
+
+
+.companySummary1 {
+  background: linear-gradient(to bottom, #ff9933, #ffe6cc, white, white);
+}
+
+.companySummary2 {
+  background: linear-gradient(to bottom, #3333ff, #ccccff, white, white);
+}
+
+.companies-header {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Anton", sans-serif;
+  background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: brown;
+  text-align: center;
+  font-size: 7vw;
+}
+
+#company-header-section {
+  position: relative;
+  background: url("../images/ai.jpg") center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 90vh;
+}
+
+.company-head-sm {
+  color: navy;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  text-align: center;
+  text-shadow: 1px 1px 0px white, 2px 2px 4px navy;
+  font-family: "Oxygen", sans-serif;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  font-size: 7vw;
+}
+
+.company-md {
+  font-size: 1.1vw;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.company-sm {
+  height: fit-content;
+  font-size: 2.1vw;
+  padding-top: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 4em;
+}
+
+figure>img {
+  width: 100%;
+  height: auto;
+
+}
+
+.figcaption-content {
+  height: 100%;
+  padding-top: 10%;
+  color: navy;
+  font-family: arial, sans-serif;
+  font-size: 2vw;
+  text-shadow: 2px 2px white;
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  top: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  text-shadow: 4px 3px white;
+  visibility: hidden;
+  opacity: 0.8;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.companyBlockContainer {
+  padding-bottom: 5em;
+}
+
+td>.btn {
+  width: 80px;
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+
+#account {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  color: black;
+}
+
+.index-s2>header {
+  font-size: 6em;
+}
+
+.hidden-label {
+  display: none;
+}
+
+.companyForm {
+  padding: 0 2rem 0 2rem;
+}
+
+.companyButtons {
+  padding-left: 1em;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+
+
+  /* Laptop/desktop */
+  .figcaption-content {
+    font-size: 3vw;
+  }
+
+  .index-head {
+    font-size: 8vw;
+  }
+
+  #index-blurb {
+    font-size: 1.2rem;
+  }
+
+  .index-s2 {
+    min-height: 75vw;
+  }
+
+  .index-s2>header {
+    font-size: 8vw;
+  }
+}
+
+.container {
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+  /* Tablet (s)*/
+  .figcaption-content {
+    font-size: 4vw;
+  }
+
+  .index-head {
+    font-size: 8vw;
+  }
+
+  #index-blurb {
+    font-size: 1rem;
+  }
+
+  .index-s2 {
+    min-height: 120vw;
+  }
+
+  .index-s2>header {
+    font-size: 8vw;
+  }
+
+  .companies-header {
+    font-size: 7vw;
+  }
+
+  body {
+    margin-bottom: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* Tablet (s)*/
+  .figcaption-content {
+    font-size: 5vw;
+  }
+
+  .index-head {
+    font-size: 8vw;
+  }
+
+  #index-blurb {
+    font-size: 2.5vw;
+  }
+
+  .index-s2>header {
+    font-size: 8vw;
+  }
+
+  .index-s2 {
+    min-height: 55vh;
+  }
+
+  #company-header-section {
+    height: 85vh;
+  }
+
+  .companies-header {
+    font-size: 7vw;
+  }
+
+  body {
+    margin-bottom: 240px;
+  }
+}

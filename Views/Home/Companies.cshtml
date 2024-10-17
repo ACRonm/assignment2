@@ -1,0 +1,82 @@
+﻿@model IList<WDP2022A2Mac.Models.Company>
+
+@{
+    ViewData["Title"] = "Companies";
+}
+<div id="company-header-section">
+    <div id="overlay"></div>
+    <header class="companies-header">
+        Top AI Companies
+     </header>
+</div>
+
+
+<div class="row g-0"> 
+
+        @for (var i = 0; i < Model.Count / 2; i++)
+        {  
+            
+            <div class='col-md-6 col-sm-12 companyImage1'>
+                <img src="/images/@(Model[(2*i)].ImageFilename).jpg"/>
+            </div>
+    
+            <div class='col-md-6 col-sm-12 companySummary1' id="@Model[(2*i)].AnchorLink">
+                    <header>@Model[(2*i)].CompanyName</header>
+                    <p>@Model[(2*i)].Summary</p>
+                    <div class="companyButtons">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        <a asp-controller="Companies" asp-action="IncreaseLike" asp-route-id="@Model[(2*i)].Id" class="btn btn-primary" asp-route-act="Companies" asp-route-ctrl="Home" asp-route-anchor="@Model[2*i].AnchorLink">Vote (@Model[(2*i)].Like)</a>
+                        }
+                        @if (User.IsInRole("admin"))
+                        {
+                        <a asp-controller="Companies" asp-action="Edit" asp-route-id="@Model[(2*i)].Id" class="btn btn-success" asp-route-act="Companies" asp-route-ctrl="Home">Edit</a>
+                        <a asp-controller="Companies" asp-action="Delete" asp-route-id="@Model[(2*i)].Id" class="btn btn-danger" asp-route-act="Companies" asp-route-ctrl="Home">Delete</a>
+                        }
+                        
+                    </div>
+                </div>
+            <div class='col-md-6 col-sm-12 companySummary2' id="@Model[(2*i+1)].AnchorLink">
+                <header>@Model[(2*i+1)].CompanyName</header>
+                <p>@Model[(2*i+1)].Summary</p>
+                <div class="companyButtons">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <a asp-controller="Companies" asp-action="IncreaseLike" asp-route-id="@Model[(2*i+1)].Id" class="btn btn-primary"  asp-route-act="Companies" asp-route-ctrl="Home" asp-route-anchor="@Model[2*i+1].AnchorLink">Vote (@Model[(2*i+1)].Like)</a>
+                    }
+                    @if (User.IsInRole("admin"))
+                    {
+                    <a asp-controller="Companies" asp-action="Edit" asp-route-id="@Model[(2*i+1)].Id" class="btn btn-success" asp-route-act="Companies" asp-route-ctrl="Home">Edit</a>
+                    <a asp-controller="Companies" asp-action="Delete" asp-route-id="@Model[(2*i+1)].Id" class="btn btn-danger" asp-route-act="Companies" asp-route-ctrl="Home">Delete</a>
+                    }
+                </div>
+
+            </div>
+            <div id="" class='col-md-6 col-sm-12 companyImage2'>
+                <img src="/images/@(Model[(2*i+1)].ImageFilename).jpg">
+            </div>       
+        }
+
+        @if (Model.Count%2 != 0)
+        {
+            <div class='col-md-6 col-sm-12 companyImage1'>
+            <img src='/images/@(Model[@Model.Count-1].ImageFilename).jpg'/>
+            </div>
+            <div class='col-md-6 col-sm-12 companySummary1' id="@Model[Model.Count-1].AnchorLink">
+                <header>@Model[@Model.Count-1].CompanyName</header>
+                <p>@Model[@Model.Count-1].Summary</p>
+                <div class="companyButtons">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="Companies" asp-action="IncreaseLike" asp-route-id="@Model[Model.Count-1].Id" class="btn btn-primary"  asp-route-act="Companies" asp-route-ctrl="Home" asp-route-anchor="@Model[Model.Count-1].AnchorLink">Vote (@Model[Model.Count-1].Like)</a>
+                    }
+                    @if (User.IsInRole("admin"))
+                    {
+                        <a asp-controller="Companies" asp-action="Edit" asp-route-id="@Model[Model.Count-1].Id" class="btn btn-success" asp-route-act="Companies" asp-route-ctrl="Home">Edit</a>
+                        <a asp-controller="Companies" asp-action="Delete" asp-route-id="@Model[Model.Count-1].Id" class="btn btn-danger" asp-route-act="Companies" asp-route-ctrl="Home">Delete</a>
+                    }
+                </div>
+            </div>
+        
+        }
+</div>

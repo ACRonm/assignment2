@@ -1,0 +1,46 @@
+﻿@model IList<WDP2022A2Mac.Models.Company>
+@{
+ViewData["Title"] = "Home Page";
+}
+
+<section class="index-s1">
+    <div id="overlay"></div>
+    <div class=" index-head">
+        Artificial Intelligence
+    </div>
+    <div id="index-blurb">
+        Artificial Intelligence (AI) is intelligence demonstrated by machines, as opposed to the natural
+        intelligence
+        displayed by animals including humans. AI research has been defined as the field of study of intelligent
+        agents,
+        which refers to any system that perceives its environment and takes actions that maximize its chance of
+        achieving its goals. Wikipedia
+    </div>
+
+</section>
+
+
+<section class="index-s2">
+    <header>Top AI Companies</header>
+
+
+    <div class="companyBlockContainer container g-3">
+        <div class="row justify-content-left align-items-center gx-3">
+            @foreach (var item in Model)
+            {
+                <figure class='col-lg-2 col-md-3 col-sm-4 col-6'>
+                    <img src='/images/@(Html.DisplayFor(modelItem => item.ImageFilename)).jpg'class='companyImage'/>
+                    <figcaption class="companyBlocks">
+                        <a href="/Home/Companies#@Html.DisplayFor(ModelItem => item.AnchorLink)">
+                            <p class="figcaption-content">
+                                @Html.DisplayFor(modelItem => item.CompanyName)
+                            </p>
+                        </a>     
+                    </figcaption>
+                </figure>
+            }
+            </div>
+    </div>
+
+</section>
+

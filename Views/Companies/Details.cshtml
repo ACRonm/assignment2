@@ -1,0 +1,61 @@
+﻿@model WDP2022A2Mac.Models.Company
+
+@{
+    ViewData["Title"] = "Details";
+}
+<section class="admin-s1 container g-5">
+    <div>
+        <h1 class="admin-head">Company details</h1>
+        <div class="row g-0">
+            <dl class="companyForm">
+                <hr />
+                <dt class = "col-12">
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </dt>
+                <dd class = "col-12">
+                    @Html.DisplayFor(model => model.CompanyName)
+                </dd>
+                <dt class = "col-12">
+                    @Html.DisplayNameFor(model => model.Summary)
+                </dt>
+                <dd class = "col-12">
+                    @Html.DisplayFor(model => model.Summary)
+                </dd>
+                <dt class = "col-12">
+                    @Html.DisplayNameFor(model => model.ImageFilename)
+                </dt>
+                <dd class = "col-12">
+                    @Html.DisplayFor(model => model.ImageFilename)
+                </dd>
+                <dt class = "col-12">
+                    @Html.DisplayNameFor(model => model.AnchorLink)
+                </dt>
+                <dd class = "col-12">
+                    @Html.DisplayFor(model => model.AnchorLink)
+                </dd>
+                <dt class = "col-12">
+                    @Html.DisplayNameFor(model => model.Like)
+                </dt>
+                <dd class = "col-12">
+                    @Html.DisplayFor(model => model.Like)
+                </dd>
+                <!-- <dt class = "col-12">
+                    @Html.DisplayNameFor(model => model.canIncreaseLike)
+                </dt>
+                <dd class = "col-12">
+                    @Html.DisplayFor(model => model.canIncreaseLike)
+                </dd> -->
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+                    <a class="btn btn-light" asp-action="Index">Back to List</a>
+                <hr/>
+            </dl>
+
+        </div>
+
+    </div>
+
+
+    
+</section>
+
+

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WDP2022A2Mac.Models.Company>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="admin-s1 container-fluid g-5">
+<h1 class="admin-head">List of Companies</h1>
+
+<hr/>
+<p>
+    <a asp-action="Create" class="btn btn-light">Add a new company</a>
+</p>
+<div class="table-container container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Summary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageFilename)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnchorLink)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Like)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Summary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageFilename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnchorLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Like)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+</div>
+<hr/>
+</section>
+
